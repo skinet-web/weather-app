@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+@import "themes";
+
+* {
+  box-sizing: content-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+
+  overflow: hidden;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 20px;
+
+  color: var(--text-color);
+  background-color: var(--bg-color);
+
+  transition: background-color 1s linear;
+
+  width: 100%;
+  height: 100%;
+  
+  font-size: 30px;
+}
+
+#location {
+  font-size: 60px;
+
+  color: var(--location-text);
+  
+}
+
+#search-text {
+  border: none;
+  border-radius: 0.2em;
+  padding: 0.25em 0.5em;
+
+  font-size: 30px;
+
+  color: var(--text-color);
+  background-color: var(--btn-bg);
+  
+}
+
+#search-btn {
+  border: none;
+  border-radius: 0.2em;
+  padding: 0.25em 0.5em;
+
+  font-size: 30px;
+
+  color: var(--text-color);
+  background-color: var(--btn-bg);
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+}
+
+#weather {
+  display: flex;
+  align-items: center;
+}
+
+#weather-temp {
+  padding-top: 10px;
+}
+
+#weather-icon {
+  user-select: none; 
+}
+
+#weather-text {
+  font-size: 30px;
+  padding-top: 10px;
+  text-transform: capitalize;
+}
+
+#status-message {
+  text-transform: capitalize;
+}
+
+#sun {
+  position: absolute;
+  left: 50px;
+  top: 20px;
+
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: rgb(255, 204, 38);
+
+  transform-origin: 20% 300%;
+  transition: transform 1s ease-in-out;
+
+  &.move {
+    transform: rotate(-90deg);
+  }
+}
+
+#moon {
+  position: absolute;
+  right: 50px;
+  top: 20px;
+
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: rgb(255, 251, 213);
+
+  transform-origin: 80% 300%;
+  transition: transform 1s ease-in-out;
+
+  &.move {
+    transform: rotate(90deg);
+  }
+
+}

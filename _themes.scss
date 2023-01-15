@@ -1,0 +1,30 @@
+$themes: (
+  "day": (
+    "colors": (
+      "bg-color": #478aff,
+      "btn-bg": #ccc,
+      "text-color": #000,
+      "location-text": #000
+    )
+  ),
+  "night": (
+    "colors": (
+      "bg-color": #0a1529,
+      "btn-bg": #555,
+      "text-color": #f5f5f5,
+      "location-text": #ffd54b
+    )
+  )
+);
+
+@each $theme-name, $theme-vars in $themes {
+  $colors: map-get($theme-vars, "colors");
+
+  #app.#{$theme-name} {
+
+    // define a css variable for each color
+    @each $name, $color in $colors {
+      --#{$name}: #{$color};
+    }
+  }
+}
